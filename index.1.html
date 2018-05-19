@@ -66,10 +66,24 @@ window.onload=function(){
     ko.applyBindings(new dealModel());
 
 var someData = [
-{"ITEM_CATEGORY_CODE":"13","AUTHOR":"NIC Kerala","DATE":"25/11/2017","DETAIL_URL":"http://kerala.nic.in/mapp/content_html_article_folder/a19/index.html","FAVOURITE":"N    ","FULL_SCREEN":"N    ","IMAGE_SHORT_URL":"","IMAGE_URL":"http://kerala.nic.in/mapp/images/w19.jpg","ITEM_CATEGORY":"News","ITEM_ID":"19","SHOW_ADD_FLAG":"Y","SOURCE":"kerala.nic.in/pages","SOURCE_DATE":"25/11/2017","TITLE":"For The People","SUB_TITLE":"Public Grievance Portal of LSGD\nGovernment of Kerala","SUBJECT_DETAILS":"Local Self Government Department implements a comprehensive\nonline grievance monitoring and redressal system. A grievance redressal cell \u2018For the\nPeople\u2019 has since been formed in LSGD with the aim to make the local self government\ninstitutions corruption free and more efficient.","TYPE":"news","THEME":"GR","LAYOUT":"TLP_0CTC"},
-{"ITEM_CATEGORY_CODE":"3,13","AUTHOR":"NIC Library","DATE":"24/11/2017","DETAIL_URL":"https://www.youtube.com/watch?v=0Dfduomqkg0","FAVOURITE":"N    ","FULL_SCREEN":"N    ","IMAGE_SHORT_URL":"0Dfduomqkg0","IMAGE_URL":"http://kerala.nic.in/mapp/images/w18.png","ITEM_CATEGORY":"Digital India,News","ITEM_ID":"18","SHOW_ADD_FLAG":"Y","SOURCE":"youtube.com","SOURCE_DATE":"24/11/2017","TITLE":"GCCS 2017 | Closing Ceremony","SUB_TITLE":"India is one of the key leaders in the digital and knowledge based economy ","SUBJECT_DETAILS":"The goal of GCCS 2017 is to promote an inclusive Cyber Space with focus on policies and frameworks for inclusivity, sustainability, development, security, safety &amp; freedom, technology and partnerships for upholding digital democracy, maximizing collaboration for strengthening security and safety and advocating dialogue for digital diplomacy.","TYPE":"VIDEO","THEME":"WB","LAYOUT":"BLP_TCSC"},
-{"ITEM_CATEGORY_CODE":"5","AUTHOR":"NIC Library","DATE":"23/11/2017","DETAIL_URL":"https://www.youtube.com/watch?v=iey4RCr-6fs&amp;feature=youtu.be","FAVOURITE":"N    ","FULL_SCREEN":"N    ","IMAGE_SHORT_URL":"iey4RCr-6fs","IMAGE_URL":"http://kerala.nic.in/mapp/images/wdg.png","ITEM_CATEGORY":"e Gov","ITEM_ID":"17","SHOW_ADD_FLAG":"Y","SOURCE":"youtube.com","SOURCE_DATE":"23/11/2017","TITLE":"How much are we ready to deal with the increasing cyber crime challenges in the world.","SUB_TITLE":"DG NIC, Smt. Neeta Verma on Security","SUBJECT_DETAILS":"Smt. Neeta Verma ,DG NIC talks on security  threats in  modern digital infrastructure.See the doordarshan episode in which DG NIC talks about her views on security and infrastructure relating to digital india","TYPE":"VIDEO","THEME":"GR","LAYOUT":"BLP_TCSC"}
+
+{
+id: "1",
+title: "DIO Training at KILA",
+description: "description"
+},
+{
+id: "2",
+title: "ADIO Training at KILA",
+description: "description"
+},
+{
+id: "3",
+title: "Guess Florence - Blue",
+description: "Nice Product"
+}
 ]
+
 }
 
 
@@ -86,8 +100,8 @@ var someData = [
     <div class='col-md-12'>
       <table class='table table-bordered' data-bind= "foreach: records">
        <tr>
-         <td data-bind="text: TITLE"></td>
-         <td data-bind="text: SUBJECT_DETAILS"></td>
+         <td data-bind="text: name"></td>
+         <td data-bind="text: description"></td>
        </tr>
       </table>
     </div>
