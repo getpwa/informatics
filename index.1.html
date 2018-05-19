@@ -1,0 +1,150 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+
+  
+    <script src="external_lib/knockout-3.4.2.js" async></script>
+    <script src="external_lib/jquery-3.3.1.min.js" async></script>
+  
+    
+   
+  <title> by teejay</title>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+window.onload=function(){
+
+    function dealModel() {
+        var self = this;
+        self.records = ko.observableArray([]);
+
+        $.getJSON("https://www.kerala.nic.in/mapp/getarticles.php", function(data) {
+            self.records(someData);
+        })
+    }
+    ko.applyBindings(new dealModel());
+
+var someData = [
+{
+id: "1",
+name: "this is a name",
+description: "description",
+image: "344206_6287.jpg",
+price: "10000.00",
+love: null,
+shipping: null,
+more_details: null,
+know: null,
+percentage: "0",
+retail_price: null,
+category_id: "1",
+has_shipping: "0"
+},
+{
+id: "2",
+name: "this is a name",
+description: "description",
+retail_price: "1200000.00",
+category_id: "2",
+has_shipping: "0"
+},
+{
+id: "3",
+name: "Guess Florence - Blue",
+description: "Nice Product",
+percentage: "37",
+retail_price: "3499.00",
+category_id: "3",
+has_shipping: "0"
+},
+{
+id: "4",
+name: "Guess Florence - Blue",
+description: "Awesome Product",
+percentage: "37",
+retail_price: "3499.00",
+category_id: "3",
+has_shipping: "0"
+},
+{
+id: "5",
+name: "Guess Florence - Blue",
+description: "Blue Product",
+percentage: "37",
+retail_price: "11299.00",
+category_id: "1",
+has_shipping: "0"
+}
+]
+
+}
+
+
+
+
+</script>
+
+  
+</head>
+
+<body>
+  <div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <table class='table table-bordered' data-bind= "foreach: records">
+       <tr>
+         <td data-bind="text: name"></td>
+         <td data-bind="text: description"></td>
+       </tr>
+      </table>
+    </div>
+  </div>
+</div>
+  
+ 
+
+</body>
+
+</html>
+
