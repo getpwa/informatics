@@ -60,7 +60,7 @@ window.onload=function(){
         self.records = ko.observableArray([]);
 
         $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
-            self.records(data);
+            self.records(someData);
         })
     }
     ko.applyBindings(new dealModel());
