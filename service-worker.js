@@ -58,12 +58,21 @@ self.addEventListener('activate', function(e) {
 });
 
 self.addEventListener('fetch', function(e) {
+
+  if (event.request.mode === 'navigate') {
+    return event.respondWith(
+      fetch(event.request).catch(() => caches.match(OFFLINE_URL))
+    );
+  }
+  
+
+
   console.log('[Service Worker] Fetch', e.request.url);
   var dataUrl = 'https://getpwa.github.io/informatics/testdata.json';
   if (e.request.url.indexOf(dataUrl) > -1) {
     /*
      * When the request URL contains dataUrl, the app is asking for fresh
-     * weather data. In this case, the service worker always goes to the
+     * data. In this case, the service worker always goes to the
      * network and then caches the response. This is called the "Cache then
      * network" strategy:
      * https://jakearchibald.com/2014/offline-cookbook/#cache-then-network
@@ -89,3 +98,4 @@ self.addEventListener('fetch', function(e) {
     );
   }
 });
+
