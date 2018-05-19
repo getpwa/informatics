@@ -49,12 +49,12 @@
         <div class='container'>
             <div class='row'>
               <div class='col-md-12'>
-                  <table class='table table-bordered' data-bind= "foreach: records">
-                      <tr>
-                        <td data-bind="text: name"></td>
-                        <td data-bind="text: description"></td>
-                      </tr>
-                     </table>
+                <table class='table table-bordered' data-bind= "foreach: records">
+                 <tr>
+                   <td data-bind="text: sources.SUB_TITLE"></td>
+                   <td data-bind="text: sources.SUB_TITLE"></td>
+                 </tr>
+                </table>
               </div>
             </div>
           </div>
@@ -68,53 +68,17 @@
   <script src="external_lib/knockout-3.4.2.js" async></script>
   <script src="external_lib/jquery-3.3.1.min.js" async></script>
   
-  <script type="text/javascript">
-    window.onload=function(){
-    
-        function dealModel() {
-            var self = this;
-            self.records = ko.observableArray([]);
-    
-            $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
-                self.records(someData);
-            })
-        }
-        ko.applyBindings(new dealModel());
-    
-    var someData = [
-    {
-    id: "1",
-    name: "this is a name",
-    description: "description"
-    
-    },
-    {
-    id: "2",
-    name: "this is a name",
-    description: "description"
-    },
-    {
-    id: "3",
-    name: "Guess Florence - Blue",
-    description: "Nice Product"
-    },
-    {
-    id: "4",
-    name: "Guess Florence - Blue",
-    description: "Awesome Product"
-    },
-    {
-    id: "5",
-    name: "Guess Florence - Blue",
-    description: "Blue Product"
+  <!-- <script src="scripts/app.js" async></script> -->
+  <script>
+function dealModel() {
+        var self = this;
+        self.records = ko.observableArray([]);
+
+        $.getJSON("https://www.kerala.nic.in/mapp/getarticles.php", function(data) {
+            self.records(data);
+        })
     }
-    ]
-    
-    }
-    
-    
-    
-    
+    ko.applyBindings(new dealModel());
     </script>
 
 </body>
