@@ -60,65 +60,11 @@ window.onload=function(){
         self.records = ko.observableArray([]);
 
         $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
-            self.records(someData);
+            self.records(data);
         })
     }
     ko.applyBindings(new dealModel());
 
-var someData = [
-{
-id: "1",
-name: "this is a name",
-description: "description",
-image: "344206_6287.jpg",
-price: "10000.00",
-love: null,
-shipping: null,
-more_details: null,
-know: null,
-percentage: "0",
-retail_price: null,
-category_id: "1",
-has_shipping: "0"
-},
-{
-id: "2",
-name: "this is a name",
-description: "description",
-retail_price: "1200000.00",
-category_id: "2",
-has_shipping: "0"
-},
-{
-id: "3",
-name: "Guess Florence - Blue",
-description: "Nice Product",
-percentage: "37",
-retail_price: "3499.00",
-category_id: "3",
-has_shipping: "0"
-},
-{
-id: "4",
-name: "Guess Florence - Blue",
-description: "Awesome Product",
-percentage: "37",
-retail_price: "3499.00",
-category_id: "3",
-has_shipping: "0"
-},
-{
-id: "5",
-name: "Guess Florence - Blue",
-description: "Blue Product",
-percentage: "37",
-retail_price: "11299.00",
-category_id: "1",
-has_shipping: "0"
-}
-]
-
-}
 
 
 
@@ -134,8 +80,8 @@ has_shipping: "0"
     <div class='col-md-12'>
       <table class='table table-bordered' data-bind= "foreach: records">
        <tr>
-         <td data-bind="text: name"></td>
-         <td data-bind="text: description"></td>
+         <td data-bind="text: sources.SUB_TITLE"></td>
+         <td data-bind="text: sourcs.SUB_TITLE"></td>
        </tr>
       </table>
     </div>
