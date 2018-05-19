@@ -43,26 +43,13 @@
   </header>
 
   <main class="main">
-    <div class="card cardTemplate weather-forecast" >
+    <div class="card cardTemplate weather-forecast" data-bind= "foreach: records">
 
 
         <div class='container'>
-            <div class='row'>
-              <div class='col-md-12'>
-                  <table class='table table-bordered' >
-                      <tr>
-                        <td >name</td>
-                        <td >description </td>
-                      </tr>
-                     </table>
-                  <table class='table table-bordered' data-bind= "foreach: records">
-                      <tr>
-                        <td data-bind="text: name"></td>
-                        <td data-bind="text: description"></td>
-                      </tr>
-                     </table>
-              </div>
-            </div>
+
+            <div class='item' data-bind="text: name"></div>
+           
           </div>
 
      
