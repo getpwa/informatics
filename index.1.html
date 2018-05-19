@@ -59,7 +59,7 @@ window.onload=function(){
         var self = this;
         self.records = ko.observableArray([]);
 
-        $.getJSON("https://www.kerala.nic.in/mapp/getarticles.php", function(data) {
+        $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
             self.records(someData);
         })
     }
