@@ -80,8 +80,8 @@ app.controller('customersCrtl', function($scope, $http) {
     method: 'GET',
     url: 'https://getpwa.github.io/informatics/testdata.json'
   }).success(function(data) {
-    alert("hi");
-    $scope.sources = data; // response data
+   
+    $scope.sources = data.sources; // response data
   });
 
 });
