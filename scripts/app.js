@@ -15,6 +15,4 @@
     console.log('Service Worker Not Supported by  Browser'); }
   }
 
-
-
-})();
+)();
