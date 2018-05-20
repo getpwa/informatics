@@ -78,7 +78,7 @@ var postsViewModel = function() {
     $.get( "https://getpwa.github.io/informatics/testdata.json", function( data ) {
         ko.mapping.fromJS( data, {}, self.sources )
     })
-}
+};
 ko.applyBindings(new postViewModel);
 
 
