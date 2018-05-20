@@ -27,6 +27,21 @@
     <button id="butAdd" class="headerButton" aria-label="Add"></button>
   </header>
   </div>
+
+  <main class="main" data-bind= "foreach: sources">
+      <div class="card cardTemplate weather-forecast" >
+  
+  
+          <div class='container'>
+  
+              <div class='item' data-bind="text: SUBJECT_DETAILS"></div>
+             
+            </div>
+  
+       
+      </div>
+    </main>
+
   <main class="main" data-bind= "foreach: records">
     <div class="card cardTemplate weather-forecast" >
 
@@ -48,9 +63,45 @@
  <script src="scripts/app.js" async></script>  
   <script src="external_lib/knockout-3.4.2.js" async></script>
   <script src="external_lib/jquery-3.3.1.min.js" async></script>
+  <script src="external_lib/knockout-mapping.js" async></script>
+
+  
   
   <script type="text/javascript">
     window.onload=function(){
+
+
+
+var postsViewModel = function() {
+    var self = this;
+    var posts = ko.mapping.fromJS([])
+    $.get( "https://getpwa.github.io/informatics/testdata.json", function( data ) {
+        ko.mapping.fromJS( data, {}, self.sources )
+    })
+}
+ko.applyBindings(new postViewModel);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
         function dealModel() {
             var self = this;
