@@ -16,12 +16,12 @@ var dataCacheName = 'informaticsData-v1';
 var cacheName = 'informaticsPWA-final-1';
 var filesToCache = [
   '/',
-  '/index.html',
-  '/scripts/app.js',
-  '/external_lib/jquery-3.3.1.min.js',
-  '/external_lib/angular.min.js',
-  '/styles/inline.css',
-  '/images/nic.png'
+  '/informatics/index.html',
+  '/informatics/scripts/app.js',
+  '/informatics/external_lib/jquery-3.3.1.min.js',
+  '/informatics/external_lib/angular.min.js',
+  '/informatics/styles/inline.css',
+  '/informatics/images/nic.png'
 ];
 
 self.addEventListener('install', function(e) {
