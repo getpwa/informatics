@@ -36,7 +36,7 @@
 
         <div class='container'>
 
-            <div class='item' data-bind="text: sources['SUBJECT_DETAILS']"></div>
+            <div class='item' data-bind="text: SUBJECT_DETAILS"></div>
            
           </div>
 
@@ -65,7 +65,7 @@
     
             $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
              
-                self.records(data);
+                self.records(data.getJSONObject("sources"));
             })
         }
         ko.applyBindings(new dealModel());
