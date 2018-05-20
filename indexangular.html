@@ -30,13 +30,20 @@
 
   
 
-  <main class="main" data-bind= "foreach: records">
+  <main class="main"  ng-app="list">
     <div class="card cardTemplate weather-forecast" >
 
 
         <div class='container'>
 
-            <div class='item' data-bind="text: SUBJECT_DETAILS"></div>
+            <div class='item'>
+
+                <ul ng-repeat="source in artists">
+                    <li>{{source.SUB_TITLE}}</li>
+                  </ul>
+
+
+            </div>
            
           </div>
 
@@ -59,19 +66,35 @@
     window.onload=function(){
 
     
-        function dealModel() {
-            var self = this;
-            self.records = ko.observableArray([]);
+
+
+
+// Code goes here
+angular.module('list', []);
+
+function ListCtrl($scope, $http) {
+  $http({
+    method: 'GET',
+    url: 'https://getpwa.github.io/informatics/testdata.json'
+  }).success(function(data) {
+    $scope.sources = data.sources; // response data
     
-            $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
-             
-              
-                self.records(data.getJSONObject("sources"));
-            })
-        }
-        ko.applyBindings(new dealModel());
-    
-    
+  
+  );
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
     
     }
     
