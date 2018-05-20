@@ -18,6 +18,9 @@ var filesToCache = [
   '/',
   '/index.html',
   '/scripts/app.js',
+  '/external_lib/jquery-3.3.1.min.js',
+  '/external_lib/knockout-3.4.2.js',
+  '/external_lib/knockout-mapping.js',
   '/styles/inline.css',
   '/images/nic.png'
 ];
