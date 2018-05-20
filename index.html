@@ -58,52 +58,11 @@
  <script src="scripts/app.js" async></script>  
   <script src="external_lib/angular.min.js" async></script>
   <script src="external_lib/jquery-3.3.1.min.js" async></script>
+  <script src="mylogic.js" async></script>
   <!-- <script src="external_lib/knockout-mapping.js" async></script> -->
 
   
   
-  <script type="text/javascript">
-    window.onload=function(){
-
-    
-
-
-
-// Code goes here
-
-var app = angular.module('myApp', []);
-app.controller('customersCrtl', function($scope, $http) {
-
-
-   $http({
-    method: 'GET',
-    url: 'https://getpwa.github.io/informatics/testdata.json'
-  }).success(function(data) {
-   
-    $scope.sources = data.sources; // response data
-  });
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    }
-    
-    
-    
-    
-    </script>
 
 </body>
 </html>
