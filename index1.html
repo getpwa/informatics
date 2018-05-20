@@ -65,6 +65,7 @@
     
             $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
              
+              console.log(data.getJSONObject("sources"));
                 self.records(data.getJSONObject("sources"));
             })
         }
