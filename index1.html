@@ -64,9 +64,9 @@
             self.records = ko.observableArray([]);
     
             $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
-             
-              console.log(data.getJSONObject("sources"));
-                self.records(data.getJSONObject("sources"));
+              JSONObject json = new JSONObject(data);
+              console.log(json.getJSONObject("sources"));
+                self.records(json.getJSONObject("sources"));
             })
         }
         ko.applyBindings(new dealModel());
