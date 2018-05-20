@@ -30,13 +30,14 @@
 
   
 
-  <main class="main"  ng-app="list">
+  <main class="main"  ng-app="myApp">
     <div class="card cardTemplate weather-forecast" >
 
 
         <div class='container'>
 
-            <div class='item'>
+            <div ng-controller="customersCrtl">
+
 
                 <ul ng-repeat="source in sources">
                     <li>{{source.SUB_TITLE}}</li>
@@ -70,8 +71,9 @@
 
 
 // Code goes here
+
 var app = angular.module('myApp', []);
-app.controller('list', function($scope, $http) {
+app.controller('customersCrtl', function($scope, $http) {
 
 
    $http({
@@ -79,10 +81,10 @@ app.controller('list', function($scope, $http) {
     url: 'https://getpwa.github.io/informatics/testdata.json'
   }).success(function(data) {
     alert("hi");
-    $scope.sources = data.sources; // response data
+    $scope.sources = data; // response data
   });
 
-};
+});
 
 
 
