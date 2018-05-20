@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://getpwa.github.io/informatics/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training PWA</title>
+  <link rel="stylesheet" type="text/css" href="styles/inline.css">
+
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Demo PWA">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="header__title">Informatics PWA</h1>
+  
+    <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
+    <button id="butAdd" class="headerButton" aria-label="Add"></button>
+  </header>
+  </div>
+
+  
+
+  <main class="main"  ng-app="myApp">
+    <div class="card cardTemplate weather-forecast" >
+
+
+        <div class='container'>
+
+            <div ng-controller="customersCrtl">
+
+
+                <ul ng-repeat="source in sources">
+                    <li>{{source.SUB_TITLE}}</li>
+                  </ul>
+
+
+            </div>
+           
+          </div>
+
+     
+    </div>
+  </main>
+<footer>
+<div>  
+
+</footer>
+ 
+ <script src="scripts/app.js" async></script>  
+  <script src="external_lib/angular.min.js" async></script>
+  <script src="external_lib/jquery-3.3.1.min.js" async></script>
+  <!-- <script src="external_lib/knockout-mapping.js" async></script> -->
+
+  
+  
+  <script type="text/javascript">
+    window.onload=function(){
+
+    
+
+
+
+// Code goes here
+
+var app = angular.module('myApp', []);
+app.controller('customersCrtl', function($scope, $http) {
+
+
+   $http({
+    method: 'GET',
+    url: 'https://getpwa.github.io/informatics/testdata.json'
+  }).success(function(data) {
+   
+    $scope.sources = data.sources; // response data
+  });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    }
+    
+    
+    
+    
+    </script>
+
+</body>
+</html>
