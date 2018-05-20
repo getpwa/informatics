@@ -18,7 +18,7 @@
   <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
   <meta name="msapplication-TileColor" content="#2F3BA2">
 </head>
-<body>
+<body  ng-app="myApp">
 
   <header class="header">
     <h1 class="header__title">Informatics PWA</h1>
@@ -30,18 +30,16 @@
 
   
 
-  <main class="main"  ng-app="myApp">
-    <div class="card cardTemplate weather-forecast" >
+  <main class="main"  ng-controller="customersCrtl">
+    <div class="card cardTemplate weather-forecast" ng-repeat="source in sources">
 
 
         <div class='container'>
 
-            <div ng-controller="customersCrtl">
+            <div>
 
 
-                <ul ng-repeat="source in sources">
-                    <li>{{source.SUB_TITLE}}</li>
-                  </ul>
+                {{source.SUB_TITLE}}
 
 
             </div>
