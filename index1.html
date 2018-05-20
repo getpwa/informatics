@@ -30,13 +30,13 @@
 
   
 
-  <main class="main" data-bind= "foreach: records.sources">
+  <main class="main" data-bind= "foreach: records">
     <div class="card cardTemplate weather-forecast" >
 
 
         <div class='container'>
 
-            <div class='item' data-bind="text: SUBJECT_DETAILS"></div>
+            <div class='item' data-bind="text: sources['SUBJECT_DETAILS']"></div>
            
           </div>
 
@@ -64,7 +64,7 @@
             self.records = ko.observableArray([]);
     
             $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
-              console.log(data);
+             
                 self.records(data);
             })
         }
