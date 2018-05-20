@@ -35,7 +35,7 @@
   
     
    
-  <title> by teejay</title>
+  <title> DEMO</title>
 
   
     
@@ -60,7 +60,7 @@ window.onload=function(){
         self.records = ko.observableArray([]);
 
         $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
-            self.records(someData);
+            self.records(data);
         })
     }
     ko.applyBindings(new dealModel());
@@ -108,10 +108,10 @@ description: "Blue Product"
   <div class='container'>
   <div class='row'>
     <div class='col-md-12'>
-      <table class='table table-bordered' data-bind= "foreach: records">
+      <table class='table table-bordered' data-bind= "foreach: records.sources">
        <tr>
-         <td data-bind="text: name"></td>
-         <td data-bind="text: description"></td>
+         <td data-bind="text: SUBJECT_DETAILS"></td>
+         <td data-bind="text: SUBJECT_DETAILS"></td>
        </tr>
       </table>
     </div>
