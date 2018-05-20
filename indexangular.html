@@ -70,20 +70,20 @@
 
 
 // Code goes here
-angular.module('list', []);
+var app = angular.module('myApp', []);
+app.controller('list', function($scope, $http) {
 
-function ListCtrl($scope, $http) {
-  $http({
+
+   $http({
     method: 'GET',
     url: 'https://getpwa.github.io/informatics/testdata.json'
   }).success(function(data) {
     alert("hi");
     $scope.sources = data.sources; // response data
-    
-  
-  
   });
-}
+
+
+
 
 
 
