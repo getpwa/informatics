@@ -1,10 +1,6 @@
 
 
-(function() {
-  'use strict';
-  // TODO add service worker code here
- 
- 
+
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('./service-worker.js')
@@ -12,7 +8,7 @@
   }
   else
   {
-    console.log('Service Worker Not Supported by  Browser'); }
+    console.log('Service Worker Not Supported by  Browser'); 
+  
   }
-
-)();
+  
