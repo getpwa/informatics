@@ -3,7 +3,9 @@ const RESOURCES_TO_PRELOAD = [
 	'index.html',
 	'register-worker.js',
 	'mylogic.js',
-	'manifest.json'
+	'manifest.json',
+	'external_lib/angular.min.js',
+	'external_lib/jquery-3.3.1.min.js'
 	//'offline-404.html'
 ];
 
