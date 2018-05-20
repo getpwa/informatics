@@ -24,6 +24,6 @@
     }],
   "start_url": "https://getpwa.github.io/informatics/index.html",
   "display": "standalone",
-  "background_color": "#3E4EB8",
-  "theme_color": "#2F3BA2"
+  "background_color": "#BDBDBD",
+  "theme_color": "#BDBDBD"
 }
