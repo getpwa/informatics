@@ -72,14 +72,14 @@
 
 
 
-var postsViewModel = function() {
-    var self = this;
-    var posts = ko.mapping.fromJS([])
-    $.get( "https://getpwa.github.io/informatics/testdata.json", function( data ) {
-        ko.mapping.fromJS( data, {}, self.sources )
-    })
-}
-ko.applyBindings(new postViewModel);
+// var postsViewModel = function() {
+//     var self = this;
+//     var posts = ko.mapping.fromJS([])
+//     $.get( "https://getpwa.github.io/informatics/testdata.json", function( data ) {
+//         ko.mapping.fromJS( data, {}, self.sources )
+//     })
+// }
+// ko.applyBindings(new postViewModel);
 
 
 
@@ -108,6 +108,7 @@ ko.applyBindings(new postViewModel);
             self.records = ko.observableArray([]);
     
             $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
+              console.log(data);
                 self.records(someData);
             })
         }
