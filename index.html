@@ -18,7 +18,7 @@
   <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
   <meta name="msapplication-TileColor" content="#2F3BA2">
 </head>
-<body>
+<body  ng-app="myApp">
 
   <header class="header">
     <h1 class="header__title">Informatics PWA</h1>
@@ -30,13 +30,19 @@
 
   
 
-  <main class="main" data-bind= "foreach: records">
-    <div class="card cardTemplate weather-forecast" >
+  <main class="main"  ng-controller="customersCrtl">
+    <div class="card cardTemplate weather-forecast" ng-repeat="source in sources">
 
 
         <div class='container'>
 
-            <div class='item' data-bind="text: name"></div>
+            <div>
+
+
+                {{source.SUB_TITLE}}
+
+
+            </div>
            
           </div>
 
@@ -49,7 +55,7 @@
 </footer>
  
  <script src="scripts/app.js" async></script>  
-  <script src="external_lib/knockout-3.4.2.js" async></script>
+  <script src="external_lib/angular.min.js" async></script>
   <script src="external_lib/jquery-3.3.1.min.js" async></script>
   <!-- <script src="external_lib/knockout-mapping.js" async></script> -->
 
@@ -59,45 +65,37 @@
     window.onload=function(){
 
     
-        function dealModel() {
-            var self = this;
-            self.records = ko.observableArray([]);
-    
-            $.getJSON("https://getpwa.github.io/informatics/testdata.json", function(data) {
-              console.log(data);
-                self.records(someData);
-            })
-        }
-        ko.applyBindings(new dealModel());
-    
-    var someData = [
-    {
-    id: "1",
-    name: "this is a name",
-    description: "description"
-    
-    },
-    {
-    id: "2",
-    name: "this is a name",
-    description: "description"
-    },
-    {
-    id: "3",
-    name: "Guess Florence - Blue",
-    description: "Nice Product"
-    },
-    {
-    id: "4",
-    name: "Guess Florence - Blue",
-    description: "Awesome Product"
-    },
-    {
-    id: "5",
-    name: "Guess Florence - Blue",
-    description: "Blue Product"
-    }
-    ]
+
+
+
+// Code goes here
+
+var app = angular.module('myApp', []);
+app.controller('customersCrtl', function($scope, $http) {
+
+
+   $http({
+    method: 'GET',
+    url: 'https://getpwa.github.io/informatics/testdata.json'
+  }).success(function(data) {
+   
+    $scope.sources = data.sources; // response data
+  });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     }
     
