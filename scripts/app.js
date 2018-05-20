@@ -3,7 +3,7 @@
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('./informatics/service-worker.js')
+             .register('https://getpwa.github.io/informatics/service-worker.js')
              .then(function() { console.log('Service Worker Registered'); });
   }
   else
