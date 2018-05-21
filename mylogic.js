@@ -1,6 +1,4 @@
-window.onload=function(){
-
-    
+   
     // Code goes here
     
     var app = angular.module('myApp', []);
@@ -18,9 +16,6 @@ window.onload=function(){
     });
     
     
-        
     
-        
-        }
         
         
