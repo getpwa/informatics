@@ -4,9 +4,8 @@ const RESOURCES_TO_PRELOAD = [
 	'register-worker.js',
 	'mylogic.js',
 	'manifest.json',
-	'external_lib/angular.min.js',
-	'external_lib/angular-route.min.js'
-	//'offline-404.html'
+	'external_lib/angular.min.js'
+	
 ];
 
  
@@ -86,7 +85,7 @@ self.addEventListener('fetch', function (event) {
 					// fetch will fail if server cannot be reached,
 					// this means that either the client or server is offline
 					console.error(error);
-					return caches.match('offline-404.html');
+					return error;
 				});
 			})
 		);
