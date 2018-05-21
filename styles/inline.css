@@ -20,7 +20,9 @@
   .header app__offline
 {     background : rgb(255, 30, 0)}
   
-
+.toast__msg toast__msg--hide{
+  background: red;color: papayawhip;
+}
 html, body {
   padding: 0;
   margin: 0;
