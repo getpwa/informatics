@@ -35,7 +35,7 @@ self.addEventListener('install', function (event) {
 		// if any item isn't successfully added to
 		// cache, the whole operation fails.
 		}).catch(function(error) {
-			console.error(error);
+			console.log(error);
 		})
 	);
 });
@@ -78,7 +78,7 @@ self.addEventListener('fetch', function (event) {
 							return response;
 						// if the response fails to cache, catch the error
 						}).catch(function(error) {
-							console.error(error);
+							console.log(error);
 							return error;
 						});
 					}
