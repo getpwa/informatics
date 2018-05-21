@@ -5,17 +5,29 @@
     app.controller('customersCrtl', function($scope, $http) {
     
     
-       $http({
-        method: 'GET',
-        url: 'https://getpwa.github.io/informatics/testdata.json'
-      }).then(function(data) {
+    //    $http({
+    //     method: 'GET',
+    //     url: 'https://getpwa.github.io/informatics/testdata.json'
+    //   }).then(function(data) {
        
+    //     $scope.sources = data.sources; // response data
+    //   });
+    
+    // });
+
+      
+      $http({
+          method: "POST",
+          url: 'https://getpwa.github.io/informatics/testdata.json', // link UserLogin with HomeController 
+          data: $scope.user
+       }).then(function (data) {
         $scope.sources = data.sources; // response data
+      
+      }, function (error) {
+
+      alert("Failed JSON Load");
       });
-    
     });
-    
-    
     
         
         
