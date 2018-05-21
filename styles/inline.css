@@ -17,8 +17,8 @@
 * {
   box-sizing: border-box; }
 
-  .app__offline
-{     background : '#9E9E9E';}
+  .header app__offline
+{     background : rgb(255, 30, 0)}
   
 
 html, body {
