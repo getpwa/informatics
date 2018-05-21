@@ -20,12 +20,16 @@
           method: "POST",
           url: 'https://getpwa.github.io/informatics/testdata.json', // link UserLogin with HomeController 
           data: $scope.user
-       }).then(function (data) {
-        $scope.sources = data.sources; // response data
-      
+       }).then(function (response) {
+       
+        if(response.status === 200) {
+          $scope.sources = response.data.sources; // response data
+      }
+
+
       }, function (error) {
 
-      alert("Failed JSON Load");
+        console.log(error);
       });
     });
     
