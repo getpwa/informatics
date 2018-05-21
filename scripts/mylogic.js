@@ -17,7 +17,7 @@
 
       
       $http({
-          method: "POST",
+          method: "GET",
           url: 'https://getpwa.github.io/informatics/testdata.json', // link UserLogin with HomeController 
           data: $scope.user
        }).then(function (response) {
