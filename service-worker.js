@@ -5,7 +5,8 @@ const RESOURCES_TO_PRELOAD = [
 	'mylogic.js',
 	'manifest.json',
 	'external_lib/angular.min.js',
-	'external_lib/jquery-3.3.1.min.js'
+	'external_lib/jquery-3.3.1.min.js',
+	'external_lib/angular-route.min.js'
 	//'offline-404.html'
 ];
 
