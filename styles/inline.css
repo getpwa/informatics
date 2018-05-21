@@ -17,6 +17,10 @@
 * {
   box-sizing: border-box; }
 
+  .app__offline
+{     background : '#9E9E9E';}
+  
+
 html, body {
   padding: 0;
   margin: 0;
